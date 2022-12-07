@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../css/Questions.css'
 
 export function Questions() {
   const questions = [
@@ -66,22 +67,22 @@ export function Questions() {
   }
 
   return (
-    <section>
+    <section className="main">
       {viewScore ? (
-        <div>
+        <div className="score_display">
           You got {score} out of {questions.length} correct!
         </div>
       ) : (
         <>
         <div>
           <div>
-            <span>Question {currentQuestion + 1}</span>/{questions.length}
+            <span className="q_tracker">Question {currentQuestion + 1}/{questions.length}</span>
           </div>
-          <div>{questions[currentQuestion].question}</div>
+          <div className="question">{questions[currentQuestion].question}</div>
         </div>
-        <div>
+        <div className="btnParent">
           {questions[currentQuestion].answerChoices.map((answer) => (
-            <button onClick={() => handleClick(answer.isCorrect)}>{answer.answer}</button> 
+            <button className='btn' onClick={() => handleClick(answer.isCorrect)}>{answer.answer}</button> 
           ))}
         </div>
         </>
