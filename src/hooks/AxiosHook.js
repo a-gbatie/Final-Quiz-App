@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+// require('dotenv').config()
 
+
+axios.defaults.baseURL = 'https://opentdb.com'
 
 // axios.defaults.baseURL = 'https://api.api-ninjas.com/v1/trivia?category=fooddrink'
-const options = {
-  method: 'GET',
-  url: 'https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia',
-  headers: {
-    'X-RapidAPI-Key': '0eda48c85fmsh5e0bb42796e8194p1008e5jsn9180d0cd9a9f',
-    'X-RapidAPI-Host': 'trivia-by-api-ninjas.p.rapidapi.com'
-  }
-};
-
+// const options = {
+//   method: 'GET',
+//   url: 'https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia',
+//   headers: {
+//     'X-RapidAPI-Key': '0eda48c85fmsh5e0bb42796e8194p1008e5jsn9180d0cd9a9f',
+//     'X-RapidAPI-Host': 'trivia-by-api-ninjas.p.rapidapi.com'
+//   }
+// };
 
 const AxiosHook = ({ url }) => {
   const [res, setRes] = useState(null)
@@ -21,7 +23,7 @@ const AxiosHook = ({ url }) => {
   useEffect(() => {
     const fetchData = () => {
       axios
-        .request(options)
+        .get(url)
         .then((res) => setRes(res.data))
         .catch((err) => setError(err))
         .finally(() => setLoading(false))
