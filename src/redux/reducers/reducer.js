@@ -2,9 +2,9 @@ import React from "react";
 import { CHANGE_AMOUNT, CHANGE_CATEGORY, CHANGE_DIFFICULTY, CHANGE_SCORE, CHANGE_TYPE } from "../actions/actionTypes";
 
 const initialState = {
-  question_category: '',
-  question_difficulty: '',
-  question_type: '',
+  question_category: "",
+  question_difficulty: "",
+  question_type: "",
   question_amount: 50,
   score: 0
 }
@@ -36,6 +36,8 @@ const reducer = (state = initialState, action) => {
         ...state, 
         score: action.payload
       }
+      default:
+        return state
   }
 }
 

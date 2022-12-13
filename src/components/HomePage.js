@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Box, CircularProgress } from '@mui/material'
+import { Button, Box, CircularProgress, Typography } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 import Configure from './Configure'
 import FormInputs from './FormInputs'
@@ -9,7 +10,8 @@ import AxiosHook from '../hooks/AxiosHook'
 const HomePage = () => {
   const { res, error, loading } = AxiosHook({ url: '/api_category.php' })
   // console.log(res)
-  
+  const history = useNavigate()
+
   if(loading){
     return (
       <Box mt={25}>
@@ -20,7 +22,9 @@ const HomePage = () => {
 
   if(error){
     return (
-      <h6 color='red'>Uh oh! Something's Not Right!</h6>
+      <Typography variant='h4' mt={25} color='red'>
+        Uh oh! Something's Not Right!
+      </Typography>
     )
   }
 
@@ -30,13 +34,14 @@ const HomePage = () => {
     { id: 'hard', name: 'Hard'}
   ]
 
-  const type = [
+  const types = [
     { id: 'multiple', name: 'Multiple Choice'},
     { id: 'boolean', name: 'True/False'}
   ]
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    history('/quiz')
   }
 
   return (
@@ -44,7 +49,7 @@ const HomePage = () => {
       <h1>Quiz App</h1>
       <Configure options={res.trivia_categories} label='Category'/>
       <Configure options={levels} label='Difficulty'/>
-      <Configure options={type}label='Style'/>
+      <Configure options={types} label='Style'/>
       <FormInputs />
       <Box mt={3} width='100%'>
         <Button fullWidth variant='contained' type='submit'>

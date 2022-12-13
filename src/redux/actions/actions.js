@@ -1,26 +1,26 @@
 import { CHANGE_AMOUNT, CHANGE_CATEGORY, CHANGE_DIFFICULTY, CHANGE_SCORE,  CHANGE_TYPE } from "./actionTypes";
 
-export const handleAmount = payload => ({
+export const handleAmount = (payload) => ({
   type: CHANGE_AMOUNT,
-  payload,
+  payload
 })
 
-export const handleCategory = payload => ({
+export const handleCategory = (payload) => ({
   type: CHANGE_CATEGORY,
-  payload,
+  payload
 })
 
-export const handleDifficulty = payload => ({
+export const handleDifficulty = (payload) => ({
   type: CHANGE_DIFFICULTY,
-  payload,
+  payload
 })
 
-export const handleType = payload => ({
+export const handleType = (payload) => ({
   type: CHANGE_TYPE,
-  payload,
+  payload
 })
 
-export const handleScore = payload => ({
+export const handleScore = (payload) => ({
   type: CHANGE_SCORE,
-  payload,
+  payload
 })

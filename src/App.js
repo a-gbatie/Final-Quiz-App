@@ -9,7 +9,7 @@ import { Box } from '@mui/material'
 
 import HomePage from './components/HomePage';
 // import Questions from './components/Questions';
-// import ScorePage from './components/ScorePage';
+import ScorePage from './components/ScorePage';
 import QuestionsApi from './components/QuestionsApi';
 
 
@@ -22,7 +22,7 @@ function App() {
           <Route path='/' element={<HomePage/>} />
           {/* <Route path='/questions' element={<Questions/>} /> */}
           <Route path='/quiz' element={<QuestionsApi/>} />
-          {/* <Route path='/score' element={<ScorePage/>} /> */}
+          <Route path='/score' element={<ScorePage/>} />
         </Routes>
         </Box>
       </Container>

@@ -1,13 +1,30 @@
 import React, { useState } from 'react'
-import { Box } from '@mui/material'
+import { Box } from '@mui/system'
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material'
+import { useDispatch } from 'react-redux'
+import { handleCategory, handleDifficulty, handleType } from '../redux/actions/actions'
 
-const Configure = ({ label, options }) => {
+const Configure = (props) => {
+  const { label, options } = props
   const [value, setValue]= useState('')
+  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     setValue(e.target.value)
     // console.log(e.target.value)
+    switch(label) {
+      case 'Category':
+        dispatch(handleCategory(e.target.value))
+        break;
+      case 'Difficulty':
+        dispatch(handleDifficulty(e.target.value))
+        break;
+      case 'Type':
+        dispatch(handleType(e.target.value))
+        break;
+      default:
+        return
+    }
   }
 
   return (
@@ -24,4 +41,4 @@ const Configure = ({ label, options }) => {
   )
 }
 
-export default Configure
+export default Configure;
