@@ -5,16 +5,6 @@ import axios from 'axios'
 
 axios.defaults.baseURL = 'https://opentdb.com'
 
-// axios.defaults.baseURL = 'https://api.api-ninjas.com/v1/trivia?category=fooddrink'
-// const options = {
-//   method: 'GET',
-//   url: 'https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia',
-//   headers: {
-//     'X-RapidAPI-Key': '0eda48c85fmsh5e0bb42796e8194p1008e5jsn9180d0cd9a9f',
-//     'X-RapidAPI-Host': 'trivia-by-api-ninjas.p.rapidapi.com'
-//   }
-// };
-
 const AxiosHook = ({ url }) => {
   const [res, setRes] = useState(null)
   const [error, setError] = useState('')

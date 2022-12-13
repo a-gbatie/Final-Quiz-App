@@ -7,6 +7,7 @@ import FormInputs from './FormInputs'
 import AxiosHook from '../hooks/AxiosHook'
 
 
+
 const HomePage = () => {
   const { res, error, loading } = AxiosHook({ url: '/api_category.php' })
   // console.log(res)
@@ -41,6 +42,7 @@ const HomePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     history('/quiz')
   }
 

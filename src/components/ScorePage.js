@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom'
 import { handleAmount, handleScore } from '../redux/actions/actions'
 
 const ScorePage = () => {
-  const { score } = useSelector(state => state)
+  const { score } = useSelector((state) => state)
   const dispatch = useDispatch()
   const history = useNavigate()
 
   const handleHome = () => {
     dispatch(handleAmount(50))
-    dispatch(handleScore(5))
+    dispatch(handleScore(0))
     history('/')
   }
 
