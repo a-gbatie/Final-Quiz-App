@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import Configure from './Configure'
 import FormInputs from './FormInputs'
 import AxiosHook from '../hooks/AxiosHook'
+import icon from '../css/icon.png'
 
 
 
@@ -57,6 +58,11 @@ const HomePage = () => {
         <Button fullWidth variant='contained' type='submit'>
           Play
         </Button>
+        <div id='footer'>
+          <a href='https://github.com/a-gbatie/Final-Quiz-App' target='_blank'>
+            <img src={icon} alt='icon' width='50' height='50'/>
+          </a>
+        </div>
       </Box>
     </form>
   )

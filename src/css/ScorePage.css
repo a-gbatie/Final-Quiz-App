@@ -1,0 +1,70 @@
+#final_text {
+  display: flex;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #616161;
+}
+
+h1{
+  font-size: 60px;
+  color: #616161;
+}
+
+/* #container {
+  left: 0px;
+  top: -100px;
+  height: calc(100vh + 100px);
+  overflow: hidden;
+  position: relative;
+} */
+
+#animate{
+  margin: 0 auto;
+  width: 20px;
+  overflow: visible;
+  position: relative;
+}
+
+#all{
+  overflow: hidden;
+  /* height: 100vh; */
+  width: 100%;
+  /* position: fixed; */
+} 
+
+#footer{
+  color: #616161;
+  text-decoration: none;
+  margin-top: 829px;
+}
+
+#quiz_footer{
+  color: #616161;
+  text-decoration: none;
+  margin-top: 965px;
+}
+
+#reference{
+  color: #616161;
+  text-decoration: none;
+  margin-top: 285px;
+}
+
+a, p{
+  text-decoration: none;
+  color: #616161;
+  letter-spacing: 4px;
+  font-size: 25px;
+  transition: all 0.25s ease-in-out;
+  /* width: auto; */
+  display: inline-block;
+  margin-right: 9px;
+}
+
+a:hover{
+  color: black;
+  letter-spacing: 2px;
+  transition: all 0.5s ease-in-out;
+} 

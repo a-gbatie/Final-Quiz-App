@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import {decode} from 'html-entities';
 import { handleScore } from '../redux/actions/actions'
 import AxiosHook from '../hooks/AxiosHook'
+import icon from '../css/icon.png'
 
 
 const getNum = (max) => {
@@ -24,18 +25,17 @@ const QuestionsApi = () => {
 
   let apiUrl = `/api.php?amount=${question_amount}`
   // console.log(res)
-
   if(question_category){
     apiUrl = apiUrl.concat(`&category=${question_category}`)
-    console.log(question_category)
+    // console.log(question_category)
+  }
+  
+  if(question_difficulty){
+    apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`)
   }
 
   if(question_type){
     apiUrl = apiUrl.concat(`&type=${question_type}`)
-  }
-
-  if(question_difficulty){
-    apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`)
   }
 
   const { res, loading } = AxiosHook({ url: apiUrl })
@@ -50,8 +50,6 @@ const QuestionsApi = () => {
       setAnswers(responses)
     }
   }, [res, showQuestions])
-  
-  
   // console.log(res)
 
   if(loading){
@@ -86,6 +84,9 @@ const QuestionsApi = () => {
       </Box>
       ))}
       <Box mt={5}>Score: {score}</Box>
+      <div id='quiz_footer'>
+        <a href='https://github.com/a-gbatie/Final-Quiz-App' target='_blank'><img src={icon} alt='icon' width='50' height='50'/></a>
+      </div>
     </Box>
   )
 }
