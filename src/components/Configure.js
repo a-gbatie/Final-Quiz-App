@@ -11,16 +11,16 @@ const Configure = (props) => {
 
   const handleChange = (e) => {
     setValue(e.target.value)
-    // console.log(e.target.value)
     switch(label) {
       case 'Category':
         dispatch(handleCategory(e.target.value))
         break;
-      case 'Difficulty':
-        dispatch(handleDifficulty(e.target.value))
-        break;
-      case 'Type':
-        dispatch(handleType(e.target.value))
+        case 'Difficulty':
+          dispatch(handleDifficulty(e.target.value))
+          break;
+          case 'Type':
+            dispatch(handleType(e.target.value))
+            // console.log(handleType(e.target.value))
         break;
       default:
         return

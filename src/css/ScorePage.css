@@ -1,6 +1,6 @@
 #final_text {
   display: flex;
-  height: 50vh;
+  /* height: 50vh; */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -37,13 +37,15 @@ h1{
 #footer{
   color: #616161;
   text-decoration: none;
-  margin-top: 829px;
+  margin-top: 40%;
+  /* margin-top: 829px; */
 }
 
 #quiz_footer{
   color: #616161;
   text-decoration: none;
-  margin-top: 965px;
+  margin-top: 40%;
+  /* margin-top: 965px; */
 }
 
 #reference{
@@ -56,7 +58,7 @@ a, p{
   text-decoration: none;
   color: #616161;
   letter-spacing: 4px;
-  font-size: 25px;
+  /* font-size: 25px; */
   transition: all 0.25s ease-in-out;
   /* width: auto; */
   display: inline-block;

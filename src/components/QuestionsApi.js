@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Typography, Button, CircularProgress } from '@mui/material'
+import { Box } from '@mui/system'
+import { Typography, Button, CircularProgress } from '@mui/material'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {decode} from 'html-entities';
@@ -13,35 +14,38 @@ const getNum = (max) => {
 }
 
 const QuestionsApi = () => {
+  
   const {
     question_category,
     question_difficulty,
     question_type,
     question_amount,
-    score,
+    score
   } = useSelector((state) => state)
+  
   const history = useNavigate()
   const dispatch = useDispatch()
-
+  
   let apiUrl = `/api.php?amount=${question_amount}`
-  // console.log(res)
-  if(question_category){
+  
+  if (question_category){
     apiUrl = apiUrl.concat(`&category=${question_category}`)
-    // console.log(question_category)
+    console.log(question_category)
   }
   
-  if(question_difficulty){
+  if (question_difficulty){
     apiUrl = apiUrl.concat(`&difficulty=${question_difficulty}`)
   }
-
-  if(question_type){
+  
+  if (question_type){
     apiUrl = apiUrl.concat(`&type=${question_type}`)
+    console.log(question_type)
   }
 
   const { res, loading } = AxiosHook({ url: apiUrl })
   const [ showQuestions, setShowQuestions ] = useState(0)
   const [ answers, setAnswers ] = useState([])
-  
+
   useEffect(() => {
     if(res?.results.length){
       const trivia = res.results[showQuestions]
@@ -50,11 +54,11 @@ const QuestionsApi = () => {
       setAnswers(responses)
     }
   }, [res, showQuestions])
-  // console.log(res)
 
+  // console.log(res)
   if(loading){
     return (
-      <Box mt={25}>
+      <Box mt={20}>
         <CircularProgress />
       </Box>
     )

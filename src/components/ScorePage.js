@@ -8,38 +8,39 @@ import '../css/ScorePage.css'
 
 
 const ScorePage = () => {
-  const { score, question_amount } = useSelector((state) => state)
   const dispatch = useDispatch()
   const history = useNavigate()
+  const { score } = useSelector((state) => state)
+  const { question_amount } = useSelector((state) => state)
 
   const handleHome = () => {
-    dispatch(handleAmount(50))
     dispatch(handleScore(0))
+    dispatch(handleAmount(50))
     history('/')
   }
 
-  let percentage = {score}/{question_amount} * 100
+  // let percentage = {score}/{question_amount} * 100
 
-  let container = document.getElementById('animate')
-  let emojis95AndUp = ['🥳', '🙌🏾', '🎉', '✨', '🔥', '🤘🏾', '🤩', '💖', '💩', '🐷', '🐸', '🎃', '🎾', '🌈', '🌻', '🥇', '🇭🇹']
+  // let container = document.getElementById('animate')
+  // let emojis95AndUp = ['🥳', '🙌🏾', '🎉', '✨', '🔥', '🤘🏾', '🤩', '💖', '💩', '🐷', '🐸', '🎃', '🎾', '🌈', '🌻', '🥇', '🇭🇹']
   // let emojis80_94 = ['✨', '🤘🏾', '😁', '🧡', '🍀', '🌽', '🍇', '🍌', '🍒', '🍕', '🍷', '🍭', '🐝', '😻']
   // let emojis71_79 = ['😊', '🌸', '🤨', '🌹', '🦑', '🍁', '🐸', '🧬', '🍔', '🍣', '🍾', '🍦', '🏖️', '🐳' ]
   // let emojis60_70 = ['🙃', '🫣', '🫣', '🦖', '🦋', '💣', '🎊', '🍑', '🥦', '🍕', '🍺', '⚽', '🎾', '💙' ]
   // let emojislessThan60 = ['😬', '🤦🏾‍♀️', '👀', '🫠', '🐠', '🌈', '🐵', '🐻', '🐥', '🍉', '🍿', '🎂', '🏈', '💜' ]
-  let circles = []
+  // let circles = []
 
-  if(percentage >= 95){
-    for (let i = 0; i < 15; i++) {
-      addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
-      addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
-      addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
-      addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
-      addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
-      addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
-      addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
-      addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
-    }
-  }
+  // if(percentage >= 95){
+  //   for (let i = 0; i < 15; i++) {
+  //     addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
+  //     addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
+  //     addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
+  //     addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
+  //     addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
+  //     addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
+  //     addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
+  //     addCircle(i * 150, [10 + 0, 300], emojis95AndUp[Math.floor(Math.random() * emojis95AndUp.length)]);
+  //   }
+  // }
 
   // if(percentage >= 80 && percentage < 94){
   //   for (let i = 0; i < 15; i++) {
@@ -90,62 +91,62 @@ const ScorePage = () => {
   //   }
   // }
 
-  function addCircle(delay, range, color) {
-    setTimeout(function() {
-      var c = new Circle(range[0] + Math.random() * range[1], 80 + Math.random() * 4, color, {
-        x: -0.15 + Math.random() * 0.3,
-        y: 1 + Math.random() * 1
-      }, range);
-      circles.push(c);
-    }, delay);
-  }
+  // function addCircle(delay, range, color) {
+  //   setTimeout(function() {
+  //     var c = new Circle(range[0] + Math.random() * range[1], 80 + Math.random() * 4, color, {
+  //       x: -0.15 + Math.random() * 0.3,
+  //       y: 1 + Math.random() * 1
+  //     }, range);
+  //     circles.push(c);
+  //   }, delay);
+  // }
   
-  function Circle(x, y, c, v, range) {
-    var _this = this;
-    this.x = x;
-    this.y = y;
-    this.color = c;
-    this.v = v;
-    this.range = range;
-    this.element = document.createElement('span');
-    this.element.style.opacity = 0;
-    this.element.style.position = 'absolute';
-    this.element.style.fontSize = '26px';
-    this.element.style.color = 'hsl('+(Math.random()*360|0)+',80%,50%)';
-    this.element.innerHTML = c;
-    container.appendChild(this.element);
+  // function Circle(x, y, c, v, range) {
+  //   var _this = this;
+  //   this.x = x;
+  //   this.y = y;
+  //   this.color = c;
+  //   this.v = v;
+  //   this.range = range;
+  //   this.element = document.createElement('span');
+  //   this.element.style.opacity = 0;
+  //   this.element.style.position = 'absolute';
+  //   this.element.style.fontSize = '26px';
+  //   this.element.style.color = 'hsl('+(Math.random()*360|0)+',80%,50%)';
+  //   this.element.innerHTML = c;
+  //   container.appendChild(this.element);
   
-    this.update = function() {
-      if (_this.y > 800) {
-        _this.y = 80 + Math.random() * 4;
-        _this.x = _this.range[0] + Math.random() * _this.range[1];
-      }
-      _this.y += _this.v.y;
-      _this.x += _this.v.x;
-      this.element.style.opacity = 1;
-      this.element.style.transform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
-      // this.element.style.webkitTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
-      this.element.style.mozTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
-    };
-  }
+  //   this.update = function() {
+  //     if (_this.y > 800) {
+  //       _this.y = 80 + Math.random() * 4;
+  //       _this.x = _this.range[0] + Math.random() * _this.range[1];
+  //     }
+  //     _this.y += _this.v.y;
+  //     _this.x += _this.v.x;
+  //     this.element.style.opacity = 1;
+  //     this.element.style.transform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
+  //     // this.element.style.webkitTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
+  //     this.element.style.mozTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)';
+  //   };
+  // }
   
-  function animate() {
-    for (let i in circles) {
-      circles[i].update();
-    }
-    requestAnimationFrame(animate);
-  }
+  // function animate() {
+  //   for (let i in circles) {
+  //     circles[i].update();
+  //   }
+  //   requestAnimationFrame(animate);
+  // }
   
-  animate();
+  // animate();
 
 
   return (
     <Box mt={30}>
-      <div id='all'>
+      {/* <div id='all'>
         <div id='container'>
           <div id='animate'></div>
         </div>
-      </div>
+      </div> */}
       <Typography variant='h3' fontWeight='bold' mb={3} id='final_text'>Final Score: {score}/{question_amount}</Typography>
       <Button onClick={handleHome} fullWidth variant='contained'>Home</Button>
       <div id='reference'>

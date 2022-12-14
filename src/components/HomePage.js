@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Box, CircularProgress, Typography } from '@mui/material'
+import { Box } from '@mui/system'
+import { Button, CircularProgress, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
 import Configure from './Configure'
@@ -16,7 +17,7 @@ const HomePage = () => {
 
   if(loading){
     return (
-      <Box mt={25}>
+      <Box mt={20}>
         <CircularProgress />
       </Box>
     )
@@ -43,7 +44,6 @@ const HomePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     history('/quiz')
   }
 

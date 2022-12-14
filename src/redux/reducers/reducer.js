@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { CHANGE_AMOUNT, CHANGE_CATEGORY, CHANGE_DIFFICULTY, CHANGE_SCORE, CHANGE_TYPE } from "../actions/actionTypes";
 
 const initialState = {
